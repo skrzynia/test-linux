@@ -10,7 +10,7 @@ pipeline {
             steps {
                 sh 'echo "Siema ciule "'
                 sh 'npm cache clean --force'
-                sh 'npm install --save --legacy-peer-deps --cache=/.npmcache'
+                sh 'npm install --save --legacy-peer-deps --cache=/.npmcache --force'
             }
         }
         stage('Deliver') {
