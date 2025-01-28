@@ -4,6 +4,7 @@ pipeline {
         stage('build') {
             steps {
                 sh 'echo "Siema ciule "'
+                sh 'npm cache clean --force'
                 sh 'npm install --save --legacy-peer-deps'
             }
         }
