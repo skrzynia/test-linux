@@ -1,11 +1,16 @@
 pipeline {
-    agent { docker { image 'node:22.13.1-alpine3.21' } }
+    agent { 
+        docker
+         { 
+            image 'node:22.13.1-alpine3.21'
+            args '-u root:root'
+             } }
     stages {
         stage('build') {
             steps {
                 sh 'echo "Siema ciule "'
                 sh 'npm cache clean --force'
-                sh 'npm install --save --legacy-peer-deps'
+                sh 'npm install --save --legacy-peer-deps --cache="/.npmcache"'
             }
         }
         stage('Deliver') {
