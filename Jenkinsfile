@@ -4,7 +4,7 @@ pipeline {
         stage('build') {
             steps {
                 sh 'echo "Siema ciule "'
-                sh 'npm version'
+                sh 'npm install'
             }
         }
     }
