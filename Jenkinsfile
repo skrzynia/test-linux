@@ -10,6 +10,7 @@ pipeline {
             steps {
                 sh 'echo "Siema ciule "'
                 sh 'npm cache clean --force'
+                sh 'rm -rf  /var/lib/jenkins/workspace/test_master/node_modules/cacache/node_modules'
                 sh 'npm install --save --legacy-peer-deps --cache=/.npmcache --force'
             }
         }
